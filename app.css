@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    
+
+}
+
+
+.backgroundRender {
+    height: auto;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: stretch;
+    /* yükseklikleri eşitler */
+    text-align: center;
+
+}
+
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+
+}
+
+.card {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    background-color: #584858;
+    color: white;
+}
+
+#toggleButton {
+    border: none;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #be95be;
+    margin: 20px;
+    padding: 10px;
+    color: #360b36;
+    border-radius: 5%;
+}
+
+.homeworlds-filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: #360b36;
+    color: white;
+    width: max-content;
+    margin-inline: auto;
+    height: auto;
+    border-radius: 8px;
+    font-size: 15px;
+
+}
+
+
+@media (max-width: 576px){
+    body {
+        background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
+        background-size:cover; 
+        object-fit: cover;
+        min-height: 100vh;
+    }
+    .card{
+        width: 22rem;
+    }
+   
+}
+
+@media (max-width: 768px){
+    body {
+        background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
+        background-size: cover;
+        object-fit:cover; 
+        min-height: 100vh;
+        
+    }
+}
+
+@media (max-width: 992px){
+    body {
+        background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
+        background-size: cover;
+        object-fit: cover; 
+        min-height: 100vh;
+       
+    }
+}
+
+@media (max-width: 1200px){
+    body {
+        background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
+        background-size: cover; 
+        object-fit: cover;
+   
+    }
+}
