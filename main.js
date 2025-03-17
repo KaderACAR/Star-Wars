@@ -177,3 +177,4 @@ function characterFilter(e) {
     });
     renderCharacters(filterListData)
 }
+

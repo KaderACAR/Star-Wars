@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
+    background-image: url(/assest/chatSpace.webp);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -45,7 +45,7 @@ body {
     border: 2px solid black;
     padding: 10px;
     margin: 10px;
-    background-color: #584858;
+    background-color: #82483d;
     color: white;
 }
 
@@ -53,10 +53,10 @@ body {
     border: none;
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #be95be;
+    background-color: #82483d;
     margin: 20px;
     padding: 10px;
-    color: #360b36;
+    color: white;
     border-radius: 5%;
 }
 
@@ -65,7 +65,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    background-color: #360b36;
+    background-color: #82483d;
     color: white;
     width: max-content;
     margin-inline: auto;
@@ -76,44 +76,50 @@ body {
 }
 
 
-@media (max-width: 576px){
-    body {
-        background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
-        background-size:cover; 
-        object-fit: cover;
-        min-height: 100vh;
-    }
-    .card{
-        width: 22rem;
-    }
-   
-}
 
-@media (max-width: 768px){
-    body {
-        background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
-        background-size: cover;
-        object-fit:cover; 
-        min-height: 100vh;
-        
-    }
-}
-
-@media (max-width: 992px){
-    body {
-        background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
-        background-size: cover;
-        object-fit: cover; 
-        min-height: 100vh;
-       
-    }
-}
 
 @media (max-width: 1200px){
     body {
-        background-image: url(/assest/Star\ Wars\ Wallpaper.jpg);
-        background-size: cover; 
-        object-fit: cover;
-   
+        background-image: url(/assest/chatSpace.webp);
+        background-size: cover;
+        object-fit:cover; 
+        min-height: 100vh;
+        overflow: hidden;   
+    }  
+}
+
+@media (max-width: 992px){
+
+}
+
+@media (max-width: 768px){
+
+    
+}
+
+@media (max-width: 576px){
+    .card{
+        width: 10rem;
     }
+   
+}
+
+@media (max-width: 575px){
+    .card{
+        width: 26.4rem;
+        
+    }
+
+    body{
+        overflow-y: scroll;
+    }
+
+    .card img{
+        min-width: 10%;
+        min-height: min-content;
+        object-fit: cover;
+        object-position: center;
+        
+    }
+   
 }
