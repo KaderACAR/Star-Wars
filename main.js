@@ -3,7 +3,8 @@ const characters = [
         "id": 1,
         "name": "Luke Skywalker",
         "pic": "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg",
-        "homeworld": "tatooine"
+        "homeworld": "tatooine",
+        "species": "human"
     },
     {
         "id": 2,
@@ -137,17 +138,26 @@ function renderCharacters(characters) {
     characters.map((character) => {
         cardWrapperEl.innerHTML += `
          <div class="card" >
-        <div class ="row" >
-        <img src="${character.pic}" class="card-img-top" alt="...">
-        <div class="card-body">
+         <div class = "card-inner">
+         <img src="${character.pic}" class="card-img" alt="...">
+         </div>
+
+         <div class = "card-back">
+         <p class="card-text">${character.species} </p>
+         </div>
+         
+         <div class="card-body">
          <h5 class="card-title">${character.name}</h5>
          <p class="card-text">${character.homeworld ?? "other"}</p>
-         </div>
+        
          </div>
          </div>
         `
     })
 } 
+
+
+
 function renderFilters(filterList) {
     filterList.map((homeworld) => {
         filterWrapperEl.innerHTML += `
@@ -161,6 +171,9 @@ function renderFilters(filterList) {
         `
     })
 } 
+
+
+
 function getUniqHomeworldsList(homeworlds) {
     const homeworldRaw = homeworlds.map((item) => item.homeworld ?? "other")
     const homeworldUniq = [...new Set(homeworldRaw)];

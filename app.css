@@ -29,43 +29,121 @@ body {
 }
 
 
-.card img {
+.card-img {
     width: 100%;
     height: 200px;
     object-fit: contain;
     object-position: center;
-
 }
+
 
 .card {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 18rem;
-    border: 2px solid black;
+    border: 2px solid #ffff;
     padding: 10px;
     margin: 10px;
-    background-color: #82483d;
+    margin-top: 50px;
+    background-color: #254a5c;
     color: white;
+    box-shadow: inset 0 0 10px #fff;
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
+
+.card:hover {
+    box-shadow: 0 0 20px #fff;
+    border: 2px solid #ffff;
+    color: transparent;
+    border-radius: 10px;
+    transition: 2s;
+    opacity: 0.3;
+    transform: scale(1.1);
+    transform-style: preserve-3d; 
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: black;
+    border: 2px solid #fff;
+    box-shadow: inset 0 0 10px #fff;
+    z-index: 1;
+    
+}
+
+.card:hover .card-back{
+    transform: rotateY(0deg);
+}
+
+.card-back{
+    transform: rotateY(180deg);
+    justify-content: center;
+    opacity: 3;
+}
+
 
 #toggleButton {
     border: none;
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #82483d;
+    background-color: #254a5c;
     margin: 20px;
     padding: 10px;
     color: white;
     border-radius: 5%;
 }
 
+#toggleButton:hover {
+    transform: scale(1.1);
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .7) 30%, #000 50%, rgba(0, 0, 0, .7) 70%);
+    mask-size: 200%;
+    animation: card-mask 2s infinite;
+}
+
+
+@keyframes card-mask {
+    from {
+        mask-position: 150%
+    }
+
+    to {
+        mask-position: -50%
+    }
+}
+
+
+
 .homeworlds-filter-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    background-color: #82483d;
+    background-color: #254a5c;
     color: white;
     width: max-content;
     margin-inline: auto;
@@ -73,6 +151,45 @@ body {
     border-radius: 8px;
     font-size: 15px;
 
+}
+
+.filter-radio input[type="radio"] {
+    appearance: none; /* Varsayılan radio buton stilini kaldır */
+    width: 15px;
+    height: 15px;
+    border: 2px solid #EAE0C8;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    opacity: 0.7;
+}
+
+.filter-radio input[type="radio"]:hover {
+    transform: rotate(360deg);
+    transition: 1s;
+    opacity: 1;
+    border: none;
+}
+
+.filter-radio input[type="radio"]:hover::after{
+    content: "⚔️";
+    font-size: 20px;
+    color: #EAE0C8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+/* Tıklanınca radio butonunun rengini değiştir */
+.filter-radio input[type="radio"]:checked {
+    background-color: #EAE0C8 ;
+    border-color: #EAE0C8;
 }
 
 
