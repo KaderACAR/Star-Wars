@@ -1,5 +1,11 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Iceberg", sans-serif;
+    font-style: italic;
+
+
 
 }
 
@@ -12,7 +18,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
-    
+    padding: 0;
 
 }
 
@@ -23,27 +29,29 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: stretch;
-    /* yükseklikleri eşitler */
     text-align: center;
 
 }
 
 
-.card-img {
+ .card-img {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: contain;
     object-position: center;
-}
 
 
-.card {
+} 
+
+
+ .card {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 18rem;
+    height: 100%;
     border: 2px solid #ffff;
-    padding: 10px;
+    padding: 80px;
     margin: 10px;
     margin-top: 50px;
     background-color: #254a5c;
@@ -54,57 +62,82 @@ body {
     cursor: pointer;
     transform-style: preserve-3d;
     perspective: 1000px;
-}
+    overflow: hidden;
 
-.card:hover {
-    box-shadow: 0 0 20px #fff;
-    border: 2px solid #ffff;
-    color: transparent;
-    border-radius: 10px;
-    transition: 2s;
-    opacity: 0.3;
-    transform: scale(1.1);
-    transform-style: preserve-3d; 
-}
-
+} 
 .card-inner {
-    position: relative;
     width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
+    height: 100px;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
     transform-style: preserve-3d;
 }
+
 .card:hover .card-inner {
     transform: rotateY(180deg);
 }
 
 
-.card-back {
-    position: absolute;
+.card-front, .card-back {
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; /* Kartın arkasını gizliyor!! */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+
+.card-back { 
+    color: #008cff;
+    transform: rotateY(180deg); /* Başlangıçta arkada olmasını sağlıyor. */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: black;
-    border: 2px solid #fff;
-    box-shadow: inset 0 0 10px #fff;
-    z-index: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    
     
 }
+ .card:hover {
+    box-shadow: 0 0 20px #fff;
+    border: 2px solid #ffff;
+    color: transparent;
+    border-radius: 10px;
+    transition: 2s;
+    transform: scale(1.1);
+    transform-style: preserve-3d; 
+} 
 
-.card:hover .card-back{
-    transform: rotateY(0deg);
+
+.card-back::after{
+    content: "";  
+    position: absolute;
+    z-index: 3;
+    width: 10px;
+    height: 10px;
+    transition: 50ms ease-in-out 0s;
+    border-radius: 15px;
+    block-size: 130%;
+    inline-size: 130%;
+    
+   
+    
+    box-shadow:
+        0 0 15px 5px #fff,  /* inner white */
+        0 0 35px 15px #008cff, /* inner blue */
+        0 0 350px 20px #0ff; /* outer cyan */
 }
 
-.card-back{
-    transform: rotateY(180deg);
-    justify-content: center;
-    opacity: 3;
-}
+
+ 
+
+
+
 
 
 #toggleButton {
@@ -154,7 +187,7 @@ body {
 }
 
 .filter-radio input[type="radio"] {
-    appearance: none; /* Varsayılan radio buton stilini kaldır */
+    appearance: none; 
     width: 15px;
     height: 15px;
     border: 2px solid #EAE0C8;
@@ -186,13 +219,10 @@ body {
     transition: 0.5s;
 }
 
-/* Tıklanınca radio butonunun rengini değiştir */
 .filter-radio input[type="radio"]:checked {
     background-color: #EAE0C8 ;
     border-color: #EAE0C8;
 }
-
-
 
 
 @media (max-width: 1200px){

@@ -4,7 +4,6 @@ const characters = [
         "name": "Luke Skywalker",
         "pic": "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg",
         "homeworld": "tatooine",
-        "species": "human"
     },
     {
         "id": 2,
@@ -139,22 +138,22 @@ function renderCharacters(characters) {
         cardWrapperEl.innerHTML += `
          <div class="card" >
          <div class = "card-inner">
+         <div class = "card-front">
          <img src="${character.pic}" class="card-img" alt="...">
          </div>
-
-         <div class = "card-back">
-         <p class="card-text">${character.species} </p>
-         </div>
          
-         <div class="card-body">
+         
+         <div class="card-back">
          <h5 class="card-title">${character.name}</h5>
          <p class="card-text">${character.homeworld ?? "other"}</p>
-        
          </div>
          </div>
+         <div/>
         `
     })
 } 
+
+
 
 
 
