@@ -214,6 +214,11 @@ body {
 }
 
 
+#filterSection{
+    display: none;
+}
+
+
 @media (max-width: 1200px){
     body {
         background-image: url(/assest/starWARSs.jpg);

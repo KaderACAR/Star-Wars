@@ -122,14 +122,17 @@ const characters = [
 
 const cardWrapperEl = document.querySelector("#allCard");
 const filterWrapperEl = document.querySelector(".homeworlds-filter-container")
+const filterSectionEl = document.querySelector("#filterSection");
 function showCharacter(e) {
     const cardLength = cardWrapperEl.querySelectorAll(".card")
     if (cardLength.length == 0) {
         renderCharacters(characters)
         e.target.textContent = "Hide Characters"
+        filterSectionEl.style.display = "flex";
     } else {
         cardWrapperEl.innerHTML = ""
         e.target.textContent = "Show Characters"
+        filterSectionEl.style.display = "none";
     }
 
 } 
@@ -152,10 +155,6 @@ function renderCharacters(characters) {
         `
     })
 } 
-
-
-
-
 
 function renderFilters(filterList) {
     filterList.map((homeworld) => {
